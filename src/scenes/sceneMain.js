@@ -1,29 +1,22 @@
-import {
-    BaseScene
-} from "./baseScene";
-import {
-    Align
-} from "../common/util/align";
-import {FormUtil} from "../common/util/formUtil";
+import { BaseScene } from "./baseScene";
+import { Align } from "../common/util/align";
+import { FormUtil } from "../common/util/formUtil";
 //
-//
+import background from '../../assets/images/background_main.png';
 //
 export class SceneMain extends BaseScene {
     constructor() {
         super('SceneMain');
     }
-    preload() {}
+    preload() {
+        this.load.image('background', background);
+    }
+
     create() {
-        //set up the base scene
         super.create();
-        //set the grid for the scene
         this.makeAlignGrid(11, 11);
-        //show numbers for layout and debugging 
-        //
+        this.setBackground('background');
         this.aGrid.showNumbers();
-        //
-        //
-        //
         this.makeUi();     
     }
    

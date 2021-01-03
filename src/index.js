@@ -18,7 +18,7 @@
  if (isMobile == -1) {
      isMobile = navigator.userAgent.indexOf("Tablet");
  }
- var w = 480;
+ var w = 980;
  var h = 640;
  //
  //
