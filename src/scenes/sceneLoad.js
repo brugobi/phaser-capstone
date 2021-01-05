@@ -1,15 +1,9 @@
-import {
-    BaseScene
-} from "./baseScene";
-import {
-    Bar
-} from "../common/comps/bar";
-import {
-    Align
-} from "../common/util/align";
-import {StarBurst} from "../common/effects/starBurst";
-import {ColorBurst} from "../common/effects/colorBurst";
-import {Flare} from "../common/effects/flare";
+import { BaseScene } from "./baseScene";
+import { Bar } from "../common/comps/bar";
+import { Align } from "../common/util/align";
+import { StarBurst } from "../common/effects/starBurst";
+import { ColorBurst } from "../common/effects/colorBurst";
+import { Flare } from "../common/effects/flare";
 
 export class SceneLoad extends BaseScene {
     constructor() {

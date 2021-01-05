@@ -1,15 +1,7 @@
- import {
-     SceneMain
- } from "./scenes/sceneMain";
- import {
-     SceneLoad
- } from "./scenes/sceneLoad";
- import {
-     SceneTitle
- } from "./scenes/sceneTitle";
- import {
-     SceneOver
- } from "./scenes/sceneOver";
+ import { SceneMain } from "./scenes/sceneMain";
+ import { SceneLoad } from "./scenes/sceneLoad";
+ import { SceneTitle } from "./scenes/sceneTitle";
+ import { SceneOver } from "./scenes/sceneOver";
   
  //
  //
@@ -31,6 +23,15 @@
      width: w,
      height: h,
      parent: 'phaser-game',
-     scene: [SceneLoad,SceneTitle,SceneMain,SceneOver]
+     physics: {
+         default: "arcade",
+         arcade: {
+             debug: true,
+             gravity: { x: 0, y: 0 }
+         }
+     },
+     scene: [SceneLoad, SceneTitle, SceneMain, SceneOver],
+     pixelArt: true,
+     roundPixels: true
  };
  let game = new Phaser.Game(config);

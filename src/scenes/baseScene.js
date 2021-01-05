@@ -1,33 +1,14 @@
-import {
-    Align
-} from "../common/util/align";
-import {
-    TextObj
-} from "../common/ui/textObj";
-import {
-    AlignGrid
-} from "../common/util/alignGrid";
-import {
-    Model
-} from "../common/mc/model";
-import {
-    EventDispatcher
-} from "../common/mc/eventDispatcher";
-import {
-    Background
-} from "../common/comps/background";
-import {
-    TextStyles
-} from "../common/ui/textStyles";
-import {
-    Controller
-} from "../common/mc/controller";
-import {
-    SoundPanel
-} from "../common/ui/soundPanel";
-import {
-    MediaManager
-} from "../common/util/mediaManager";
+import { Align } from "../common/util/align";
+import { TextObj } from "../common/ui/textObj";
+import { AlignGrid } from "../common/util/alignGrid";
+import { Model } from "../common/mc/model";
+import { EventDispatcher } from "../common/mc/eventDispatcher";
+import { Background } from "../common/comps/background";
+import { TextStyles } from "../common/ui/textStyles";
+import { Controller } from "../common/mc/controller";
+import { SoundPanel } from "../common/ui/soundPanel";
+import { MediaManager } from "../common/util/mediaManager";
+
 export class BaseScene extends Phaser.Scene {
     constructor(key) {
         super(key);

@@ -1,21 +1,11 @@
-import {
-    BaseScene
-} from "./baseScene";
-import {
-    FlatButton
-} from "../common/ui/flatButton";
-import {
-    TextStyles
-} from "../common/ui/textStyles";
-import {
-    ToggleButton
-} from "../common/ui/toggleButton";
-import {
-    Align
-} from "../common/util/align";
+import { BaseScene } from "./baseScene";
+import { FlatButton } from "../common/ui/flatButton";
+import { TextStyles } from "../common/ui/textStyles";
+import { ToggleButton } from "../common/ui/toggleButton";
+import { Align } from "../common/util/align";
 
 //
-//
+import background_title from '../../assets/images/background_title.jpg';
 //
 export class SceneTitle extends BaseScene {
     constructor() {
@@ -23,6 +13,7 @@ export class SceneTitle extends BaseScene {
     }
     preload() {
         super.preload();
+        this.load.image('background_title', background_title);
     }
     create() {
         super.create();
@@ -31,7 +22,7 @@ export class SceneTitle extends BaseScene {
         // uncomment to turn on music
         // this.mm.setBackgroundMusic("backgroundMusic");
         //
-        this.setBackground('sky');
+        this.setBackground('background_title');
         //
         //
         this.makeAlignGrid(11, 11);
@@ -40,7 +31,7 @@ export class SceneTitle extends BaseScene {
         //
         //
       //  this.placeImage('title', 27, .8);
-        this.placeText("Game Title",27,"TITLE_TEXT");
+        this.placeText("THE WALKERS",27,"TITLE_TEXT");
         //
         //
         //
