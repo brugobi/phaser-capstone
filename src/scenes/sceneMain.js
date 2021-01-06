@@ -124,8 +124,8 @@ export class SceneMain extends BaseScene {
                 if (Phaser.Math.Between(0, 10) >= 3) {
                     enemy = new GunShip(
                         this,
-                        Phaser.Math.Between(0, this.game.config.width),
-                        0
+                        0,
+                        Phaser.Math.Between(0, this.game.config.width)
                     );
                 }
                 else if (Phaser.Math.Between(0, 10) >= 5) {
@@ -133,16 +133,16 @@ export class SceneMain extends BaseScene {
 
                         enemy = new ChaserShip(
                             this,
-                            Phaser.Math.Between(0, this.game.config.width),
-                            0
+                            0,
+                            Phaser.Math.Between(0, this.game.config.width)
                         );
                     }
                 }
                 else {
                     enemy = new CarrierShip(
                         this,
-                        Phaser.Math.Between(0, this.game.config.width),
-                        0
+                        0,
+                        Phaser.Math.Between(0, this.game.config.width)
                     );
                 }
 
