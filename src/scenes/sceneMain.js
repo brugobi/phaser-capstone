@@ -2,13 +2,15 @@ import { BaseScene } from "./baseScene";
 import { Align } from "../common/util/align";
 import { FormUtil } from "../common/util/formUtil";
 //
+import { Clock } from '../common/comps/clock';
+import { ScoreBox } from '../common/comps/scoreBox';
 import { Player } from '../common/comps/player';
 import { PlayerLaser } from '../common/comps/player';
 import { GunShip } from '../common/comps/enemies';
 import { CarrierShip } from '../common/comps/enemies';
 import { ChaserShip } from '../common/comps/enemies';
 import { EnemyLaser } from '../common/comps/enemies';
-import dude from '../../assets/images/dude.png'
+import dude from '../../assets/images/dude.png';
 //
 export class SceneMain extends BaseScene {
     constructor() {
@@ -94,7 +96,7 @@ export class SceneMain extends BaseScene {
         // mine
         this.setBackground('background_main');
         this.makeUi();
-        //this.aGrid.showNumbers();
+        this.aGrid.showNumbers();
         this.player = new Player(
             this,
             this.game.config.width * 0.5,
@@ -154,8 +156,8 @@ export class SceneMain extends BaseScene {
             loop: true
         });
 
-        // To add collisions
-        this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) { // If we wanted to have the enemy destroyed upon being hit by a player laser
+        // To add collisions If we wanted to have the enemy destroyed upon being hit by a player laser
+        this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) {
             if (enemy) {
                 if (enemy.onDestroy !== undefined) {
                     enemy.onDestroy();
@@ -168,8 +170,7 @@ export class SceneMain extends BaseScene {
 
         // add a collider between this.player and this.enemies:
         this.physics.add.overlap(this.player, this.enemies, function (player, enemy) {
-            if (!player.getData("isDead") &&
-                !enemy.getData("isDead")) {
+            if (!player.getData("isDead") && !enemy.getData("isDead")) {
                 player.explode(false);
                 enemy.explode(true);
             }
@@ -177,8 +178,7 @@ export class SceneMain extends BaseScene {
 
         // We can also add a collider between this.player and this.enemyLasers.
         this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
-            if (!player.getData("isDead") &&
-                !laser.getData("isDead")) {
+            if (!player.getData("isDead") && !laser.getData("isDead")) {
                 player.explode(false);
                 laser.destroy();
             }
@@ -190,6 +190,22 @@ export class SceneMain extends BaseScene {
     makeUi() {
         super.makeSoundPanel();
         super.makeGear();
+
+        let scoreBox = new ScoreBox({ scene: this });
+        this.placeAtIndex(3, scoreBox);
+
+        let clock = new Clock({
+            scene: this,
+            callback: this.timeUp.bind(this)
+        });
+        clock.setClock(300);
+        this.placeAtIndex(7, clock);
+        clock.startClock();
+    }
+
+    timeUp() {
+        console.log("time is up");
+        this.scene.start("SceneOver");
     }
 
     // mine down here

@@ -1,15 +1,9 @@
-import {
-    UIBlock
-} from "../ui/uiblock.js";
-import {
-    TextObj
-} from "../ui/textObj";
-import {
-    EventDispatcher
-} from "../mc/eventDispatcher";
-import {Model} from "../mc/model";
+import { UIBlock } from "../ui/uiblock.js";
+import { TextObj } from "../ui/textObj";
+import { EventDispatcher } from "../mc/eventDispatcher";
+import { Model } from "../mc/model";
 
-import {TextStyles} from "../ui/textStyles";
+import { TextStyles } from "../ui/textStyles";
 
 export class ScoreBox extends UIBlock {
     constructor(config) {

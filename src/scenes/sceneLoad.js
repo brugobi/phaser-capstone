@@ -47,14 +47,14 @@ export class SceneLoad extends BaseScene {
         //
         //game png
         //
-        let pngArray = ['panelBack', 'title', 'face', 'background_main'];
+        let pngArray = ['panelBack', 'title', 'face', 'background_main', 'background_over'];
         for (let i = 0; i < pngArray.length; i++) {
             this.loadPng(pngArray[i], this.imagePath);
         }
         //
         //game jpg
         //
-        let jpgArray = ['background_title'];
+        let jpgArray = ['background_title', 'sky'];
         for (let i = 0; i < jpgArray.length; i++) {
             this.loadJpg(jpgArray[i], this.imagePath);
         }

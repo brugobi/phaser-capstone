@@ -1,6 +1,6 @@
-import {
-    BaseScene
-} from "./baseScene";
+import { BaseScene } from "./baseScene";
+import { FlatButton } from '../common/ui/flatButton';
+
 export class SceneOver extends BaseScene {
     constructor() {
         super('SceneOver');
@@ -13,7 +13,7 @@ export class SceneOver extends BaseScene {
         // uncomment to turn on music
         // this.mm.setBackgroundMusic("backgroundMusic");
         //
-        this.setBackground('sky');
+        this.setBackground('background_over');
         //
         //
         this.makeAlignGrid(11, 11);
@@ -22,7 +22,7 @@ export class SceneOver extends BaseScene {
         //
         //
         //  this.placeImage('title', 27, .8);
-        this.placeText("Game Title", 27, "TITLE_TEXT");
+        this.placeText("Game Over", 27, "TITLE_TEXT");
         //
         //
         //

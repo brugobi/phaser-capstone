@@ -25,6 +25,7 @@ export class TextStyles {
         TextStyles.SIZE_MED2 = width / 25;
         TextStyles.SIZE_SMALL = width / 30;
         TextStyles.SIZE_SMALL2 = width / 40;
+        TextStyles.SIZE_SMALL3 = width / 50;
         TextStyles.MAIN_FONT="Impact";
 
         this.styles = [];
@@ -139,7 +140,7 @@ export class TextStyles {
         this.styles['SCORE'] = {
             style: {
                 fontFamily: TextStyles.MAIN_FONT,
-                fontSize: TextStyles.SIZE_LARGE,
+                fontSize: TextStyles.SIZE_SMALL,
                 color: "#ffffff"
             }
         };
