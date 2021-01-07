@@ -8,8 +8,6 @@ import { GunShip } from '../common/comps/enemies';
 import { CarrierShip } from '../common/comps/enemies';
 import { ChaserShip } from '../common/comps/enemies';
 import { EnemyLaser } from '../common/comps/enemies';
-import background_main from '../../assets/images/background_main.png';
-// import sprPlayer from '../../assets/images/sprPlayer.png';
 import dude from '../../assets/images/dude.png'
 //
 export class SceneMain extends BaseScene {
@@ -17,7 +15,7 @@ export class SceneMain extends BaseScene {
         super('SceneMain');
     }
     preload() {
-        this.load.image('background_main', background_main);
+        //this.load.image('background_main', background_main);
         this.load.spritesheet('dude', dude, { frameWidth: 30, frameHeight: 48 });
 
         // testing
@@ -54,10 +52,11 @@ export class SceneMain extends BaseScene {
         this.makeAlignGrid(11, 11);
 
         //testing here
+
         this.anims.create({
             key: "sprEnemy0",
             frames: this.anims.generateFrameNumbers("sprEnemy0"),
-            frameRate: 20,
+            frameRate: 5,
             repeat: -1
         });
 
@@ -91,10 +90,10 @@ export class SceneMain extends BaseScene {
         };
 
         //end testing
-        
+
         // mine
         this.setBackground('background_main');
-        this.makeUi();   
+        this.makeUi();
         //this.aGrid.showNumbers();
         this.player = new Player(
             this,
@@ -102,7 +101,7 @@ export class SceneMain extends BaseScene {
             this.game.config.height * 0.5,
             "dude"
         );
-        
+
         //player.setBounce(0.2);
         //player.setCollideWorldBounds(true);
 
@@ -154,7 +153,7 @@ export class SceneMain extends BaseScene {
             callbackScope: this,
             loop: true
         });
-        
+
         //this.placeImage('cowboy4', 60, .25);
         // mine up to here  
     }
@@ -257,6 +256,6 @@ export class SceneMain extends BaseScene {
         }
         return arr;
     }
-   
-    
+
+
 }

@@ -47,14 +47,14 @@ export class SceneLoad extends BaseScene {
         //
         //game png
         //
-        let pngArray = ['panelBack','title','face'];
+        let pngArray = ['panelBack', 'title', 'face', 'background_main'];
         for (let i = 0; i < pngArray.length; i++) {
             this.loadPng(pngArray[i], this.imagePath);
         }
         //
         //game jpg
         //
-        let jpgArray = ['sky'];
+        let jpgArray = ['background_title'];
         for (let i = 0; i < jpgArray.length; i++) {
             this.loadJpg(jpgArray[i], this.imagePath);
         }
@@ -68,7 +68,7 @@ export class SceneLoad extends BaseScene {
         //
         //game mp3
         //
-        let mp3Array = [];
+        let mp3Array = ['TWD_title'];
         for (let i = 0; i < mp3Array.length; i++) {
             this.loadMp3(mp3Array[i], this.audioPath);
         }

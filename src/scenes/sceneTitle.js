@@ -5,7 +5,6 @@ import { ToggleButton } from "../common/ui/toggleButton";
 import { Align } from "../common/util/align";
 
 //
-import background_title from '../../assets/images/background_title.jpg';
 //
 export class SceneTitle extends BaseScene {
     constructor() {
@@ -13,15 +12,14 @@ export class SceneTitle extends BaseScene {
     }
     preload() {
         super.preload();
-        this.load.image('background_title', background_title);
+        //this.load.image('background_title', background_title);
     }
     create() {
         super.create();
         //
         //
         // uncomment to turn on music
-        // this.mm.setBackgroundMusic("backgroundMusic");
-        //
+        this.mm.setBackgroundMusic("TWD_title");
         this.setBackground('background_title');
         //
         //
