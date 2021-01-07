@@ -154,6 +154,35 @@ export class SceneMain extends BaseScene {
             loop: true
         });
 
+        // To add collisions
+        this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) { // If we wanted to have the enemy destroyed upon being hit by a player laser
+            if (enemy) {
+                if (enemy.onDestroy !== undefined) {
+                    enemy.onDestroy();
+                }
+
+                enemy.explode(true);
+                playerLaser.destroy();
+            }
+        });
+
+        // add a collider between this.player and this.enemies:
+        this.physics.add.overlap(this.player, this.enemies, function (player, enemy) {
+            if (!player.getData("isDead") &&
+                !enemy.getData("isDead")) {
+                player.explode(false);
+                enemy.explode(true);
+            }
+        });
+
+        // We can also add a collider between this.player and this.enemyLasers.
+        this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
+            if (!player.getData("isDead") &&
+                !laser.getData("isDead")) {
+                player.explode(false);
+                laser.destroy();
+            }
+        });
         //this.placeImage('cowboy4', 60, .25);
         // mine up to here  
     }
@@ -167,28 +196,29 @@ export class SceneMain extends BaseScene {
     update() {
         this.player.update();
 
-        if (this.keyW.isDown) {
-            this.player.moveUp();
-            console.log(this.player);
-        }
-        else if (this.keyS.isDown) {
-            this.player.moveDown();
-        }
+        // If we run the game, you may notice that the player can still move around and shoot, even if the player ship explodes. We can fix this by adding a check around the player update call and the movement and shooting calls in SceneMain. The ending result should appear as:
+        if (!this.player.getData("isDead")) {
+            this.player.update();
+            if (this.keyW.isDown) {
+                this.player.moveUp();
+            }
+            else if (this.keyS.isDown) {
+                this.player.moveDown();
+            }
+            if (this.keyA.isDown) {
+                this.player.moveLeft();
+            }
+            else if (this.keyD.isDown) {
+                this.player.moveRight();
+            }
 
-        if (this.keyA.isDown) {
-            this.player.moveLeft();
-        }
-        else if (this.keyD.isDown) {
-            this.player.moveRight();
-        }
-
-        // allow the player to shoot
-        if (this.keySpace.isDown) {
-            this.player.setData("isShooting", true);
-        }
-        else {
-            this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
-            this.player.setData("isShooting", false);
+            if (this.keySpace.isDown) {
+                this.player.setData("isShooting", true);
+            }
+            else {
+                this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
+                this.player.setData("isShooting", false);
+            }
         }
 
         // to make the enemies chasing you
@@ -213,7 +243,7 @@ export class SceneMain extends BaseScene {
 
             }
         }
-
+        
         // Frustum culling for enimies
         for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
             var laser = this.enemyLasers.getChildren()[i];
