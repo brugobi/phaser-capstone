@@ -28,21 +28,20 @@ export class SceneMain extends BaseScene {
             frameHeight: 32
         });
         this.load.spritesheet("sprEnemy0", "../../assets/images/sprEnemy0.png", {
-            frameWidth: 16,
-            frameHeight: 16
+            frameWidth: 29,
+            frameHeight: 48
         });
-        this.load.image("sprEnemy1", "../../assets/images/sprEnemy1.png");
+        this.load.spritesheet("sprEnemy1", "../../assets/images/sprEnemy1.png", {
+            frameWidth: 32,
+            frameHeight: 49
+        });
         this.load.spritesheet("sprEnemy2", "../../assets/images/sprEnemy2.png", {
-            frameWidth: 16,
-            frameHeight: 16
+            frameWidth: 21,
+            frameHeight: 36
         });
         this.load.image("sprLaserEnemy0", "../../assets/images/sprLaserEnemy0.png");
         this.load.image("sprLaserPlayer", "../../assets/images/sprLaserPlayer.png");
-        this.load.spritesheet("sprPlayer", "content/sprPlayer.png", {
-            frameWidth: 16,
-            frameHeight: 16
-        });
-
+    
         this.load.audio("sndExplode0", "../../assets/images/sndExplode0.wav");
         this.load.audio("sndExplode1", "../../assets/images/sndExplode1.wav");
         this.load.audio("sndLaser", "../../assets/images/sndLaser.wav");
@@ -63,9 +62,16 @@ export class SceneMain extends BaseScene {
         });
 
         this.anims.create({
+            key: "sprEnemy1",
+            frames: this.anims.generateFrameNumbers("sprEnemy1"),
+            frameRate: 20,
+            repeat: -1
+        });
+
+        this.anims.create({
             key: "sprEnemy2",
             frames: this.anims.generateFrameNumbers("sprEnemy2"),
-            frameRate: 20,
+            frameRate: 5,
             repeat: -1
         });
 

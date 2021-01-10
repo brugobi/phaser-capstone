@@ -53,6 +53,6 @@ export class Player extends Entity {
 export class PlayerLaser extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, "sprLaserPlayer");
-    this.body.velocity.y = -200;
+    this.body.velocity.x = -200;
   }
 }

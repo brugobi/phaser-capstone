@@ -34,13 +34,13 @@ export class ChaserShip extends Entity {
           Math.cos(angle) * speed,
           Math.sin(angle) * speed
         );
-        // the chaser ship to rotate
-        if (this.x < this.scene.player.x) {
-          this.angle -= 5;
-        }
-        else {
-          this.angle += 5;
-        }
+        // // the chaser ship to rotate
+        // if (this.x < this.scene.player.x) {
+        //   this.angle -= 5;
+        // }
+        // else {
+        //   this.angle += 5;
+        // }
       }
     }
   }
