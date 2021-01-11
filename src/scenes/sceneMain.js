@@ -128,7 +128,7 @@ export class SceneMain extends BaseScene {
         this.enemyLasers = this.add.group();
         this.playerLasers = this.add.group();
 
-        this.time.addEvent({
+        this.timer1 = this.time.addEvent({
             delay: 1000,
             callback: function () {
                 var enemy = null;
@@ -187,6 +187,7 @@ export class SceneMain extends BaseScene {
         this.physics.add.overlap(this.player, this.enemies, function (player, enemy) {
             if (!player.getData("isDead") && !enemy.getData("isDead")) {
                 player.explode(false);
+                player.onDestroy();
                 enemy.explode(true);
             }
         });
@@ -195,9 +196,13 @@ export class SceneMain extends BaseScene {
         this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
             if (!player.getData("isDead") && !laser.getData("isDead")) {
                 player.explode(false);
+                player.onDestroy();
                 laser.destroy();
             }
         });
+        
+
+        
         //this.placeImage('cowboy4', 60, .25);
         // mine up to here  
     }
@@ -217,8 +222,7 @@ export class SceneMain extends BaseScene {
     }
 
     timeUp() {
-        console.log("time is up");
-        //this.emitter.emit("UP_POINTS", 1);
+        this.timer1.remove();
         this.scene.start("SceneOver");
     }
 
