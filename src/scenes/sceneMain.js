@@ -102,6 +102,11 @@ export class SceneMain extends BaseScene {
         // mine
         this.setBackground('background_main');
         this.makeUi();
+
+        var score = 0;
+        var scoreText;
+        scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
+
         this.aGrid.showNumbers();
         this.player = new Player(
             this,
@@ -171,6 +176,10 @@ export class SceneMain extends BaseScene {
 
                 enemy.explode(true);
                 playerLaser.destroy();
+                score += 10;
+                scoreText.setText('Score: ' + score);
+
+                
             }
         });
 
@@ -197,20 +206,19 @@ export class SceneMain extends BaseScene {
         super.makeSoundPanel();
         super.makeGear();
 
-        let scoreBox = new ScoreBox({ scene: this });
-        this.placeAtIndex(3, scoreBox);
 
         let clock = new Clock({
             scene: this,
             callback: this.timeUp.bind(this)
         });
         clock.setClock(300);
-        this.placeAtIndex(7, clock);
+        this.placeAtIndex(10, clock);
         clock.startClock();
     }
 
     timeUp() {
         console.log("time is up");
+        //this.emitter.emit("UP_POINTS", 1);
         this.scene.start("SceneOver");
     }
 
