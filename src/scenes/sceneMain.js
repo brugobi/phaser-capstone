@@ -107,7 +107,7 @@ export class SceneMain extends BaseScene {
         var scoreText;
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
 
-        this.aGrid.showNumbers();
+        //this.aGrid.showNumbers();
         this.player = new Player(
             this,
             this.game.config.width * 0.5,
@@ -178,7 +178,7 @@ export class SceneMain extends BaseScene {
                 playerLaser.destroy();
                 score += 10;
                 scoreText.setText('Score: ' + score);
-
+                localStorage.setItem('score', JSON.stringify(score));
                 
             }
         });

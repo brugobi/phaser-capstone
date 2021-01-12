@@ -32,7 +32,6 @@ export class SceneTitle extends BaseScene {
         this.placeText("THE WALKERS",27,"TITLE_TEXT");
         //
         //
-        //
       //  let buttonStyle = this.textStyles.getStyle(TextStyles.BUTTON_STYLE);
         let btnNext = new FlatButton({
             scene: this,
