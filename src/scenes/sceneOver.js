@@ -2,6 +2,7 @@ import { BaseScene } from "./baseScene";
 import { FlatButton } from '../common/ui/flatButton';
 //
 //import { FormUtil } from '../common/util/formUtil';
+import { getScore } from '../common/util/api';
 
 export class SceneOver extends BaseScene {
     constructor() {
@@ -27,10 +28,7 @@ export class SceneOver extends BaseScene {
         this.placeText("Game Over", 27, "TITLE_TEXT");
         //
         // display score
-        
-        // fecth request GET to get the player score lineStyle
-        // loop through the list of the score
-
+        //
         //finish score
 
         //  let buttonStyle = this.textStyles.getStyle(TextStyles.BUTTON_STYLE);
