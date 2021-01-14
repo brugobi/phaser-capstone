@@ -1,7 +1,7 @@
 import { BaseScene } from "./baseScene";
 import { FlatButton } from '../common/ui/flatButton';
-
-import { Dom } from '../common/util/dom';
+//
+//import { FormUtil } from '../common/util/formUtil';
 
 export class SceneOver extends BaseScene {
     constructor() {
@@ -20,15 +20,19 @@ export class SceneOver extends BaseScene {
         //
         this.makeAlignGrid(11, 11);
         // this.aGrid.showNumbers();
-        //
-        //
-        //
+        // this.formUtil = new FormUtil({ scene: this, rows: 11, cols: 11 });
+        // this.formUtil.scaleToGameW("nameField", .4);
+        // this.formUtil.placeAtIndex(60, "nameField");
         //  this.placeImage('title', 27, .8);
         this.placeText("Game Over", 27, "TITLE_TEXT");
         //
-        this.dom.createInputName();
-        this.add.dom(this.game.config.width * 0.7, 250, div);
-        //
+        // display score
+        
+        // fecth request GET to get the player score lineStyle
+        // loop through the list of the score
+
+        //finish score
+
         //  let buttonStyle = this.textStyles.getStyle(TextStyles.BUTTON_STYLE);
         let btnNext = new FlatButton({
             scene: this,

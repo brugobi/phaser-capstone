@@ -103,8 +103,7 @@ export class SceneMain extends BaseScene {
         this.setBackground('background_main');
         this.makeUi();
 
-        var score = 0;
-        var scoreText;
+        let scoreText;
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
 
         //this.aGrid.showNumbers();
@@ -176,10 +175,8 @@ export class SceneMain extends BaseScene {
 
                 enemy.explode(true);
                 playerLaser.destroy();
-                score += 10;
-                scoreText.setText('Score: ' + score);
-                localStorage.setItem('score', JSON.stringify(score));
-                
+                playerLaser.player.score += 10;
+                scoreText.setText('Score: ' + playerLaser.player.score);
             }
         });
 

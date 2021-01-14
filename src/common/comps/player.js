@@ -1,10 +1,12 @@
 import { Entity } from './entities';
+import Dom from '../util/dom';
 
 export class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, "Player");
     this.setData("speed", 200);
     this.play("dude");
+    this.score = 0;
 
     // giving the player the ability to shoot
     this.setData("isShooting", false);
@@ -32,7 +34,10 @@ export class Player extends Entity {
     this.scene.time.addEvent({ // go to game over scene
       delay: 1000,
       callback: function () {
-        this.scene.scene.start("SceneOver");
+        this.dom = new Dom();
+        this.scene.add.dom(300, 300, this.dom.createInputName());
+        this.dom.addBtnEvent(this);
+        //this.scene.scene.start("SceneOver");
       },
       callbackScope: this,
       loop: false
@@ -51,7 +56,7 @@ export class Player extends Entity {
         this.setData("timerShootTick", this.getData("timerShootTick") + 1); // every game update, increase timerShootTick by one until we reach the value of timerShootDelay
       }
       else { // when the "manual timer" is triggered:
-        var laser = new PlayerLaser(this.scene, this.x, this.y);
+        var laser = new PlayerLaser(this.scene, this.x, this.y, this);
         this.scene.playerLasers.add(laser);
 
         this.scene.sfx.laser.play(); // play the laser sound effect
@@ -62,8 +67,9 @@ export class Player extends Entity {
 }
 
 export class PlayerLaser extends Entity {
-  constructor(scene, x, y) {
+  constructor(scene, x, y, player) {
     super(scene, x, y, "sprLaserPlayer");
     this.body.velocity.x = -200;
+    this.player = player;
   }
 }

@@ -30,6 +30,9 @@
              gravity: { x: 0, y: 0 }
          }
      },
+     dom: {
+         createContainer: true
+     },
      scene: [SceneLoad, SceneTitle, SceneMain, SceneOver],
      pixelArt: true,
      roundPixels: true
