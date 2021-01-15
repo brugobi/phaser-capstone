@@ -2,6 +2,7 @@
  import { SceneLoad } from "./scenes/sceneLoad";
  import { SceneTitle } from "./scenes/sceneTitle";
  import { SceneOver } from "./scenes/sceneOver";
+import { SceneScore } from "./scenes/sceneLeaderBoard";
   
  //
  //
@@ -33,7 +34,7 @@
      dom: {
          createContainer: true
      },
-     scene: [SceneLoad, SceneTitle, SceneMain, SceneOver],
+     scene: [SceneLoad, SceneTitle, SceneMain, SceneOver, SceneScore],
      pixelArt: true,
      roundPixels: true
  };

@@ -41,12 +41,16 @@ export class SceneTitle extends BaseScene {
             callback: this.startGame.bind(this)
         });
         this.aGrid.placeAtIndex(104, btnNext);
-        //
-        //
-        //
-        //
-        //
-        //
+        
+        let btnScore = new FlatButton({
+            scene: this,
+            textStyle: 'BUTTON_STYLE',
+            key: "button",
+            text: "See Score",
+            callback: this.seeScore.bind(this)
+        });
+        this.aGrid.placeAtIndex(60, btnScore);
+
         this.makeUi();
         // this.placeText("Test Me!!",49,"frost");
     }
@@ -54,6 +58,11 @@ export class SceneTitle extends BaseScene {
         super.makeSoundPanel();
         super.makeGear();
     }
+
+    seeScore() {
+        this.scene.start("SceneScore");
+    }
+    
     startGame() {
         this.scene.start("SceneMain");
     }
