@@ -1,9 +1,9 @@
 import { BaseScene } from "./baseScene";
 import { Bar } from "../common/comps/bar";
 import { Align } from "../common/util/align";
-import { StarBurst } from "../common/effects/starBurst";
-import { ColorBurst } from "../common/effects/colorBurst";
-import { Flare } from "../common/effects/flare";
+// import { StarBurst } from "../common/effects/starBurst";
+// import { ColorBurst } from "../common/effects/colorBurst";
+// import { Flare } from "../common/effects/flare";
 
 export class SceneLoad extends BaseScene {
     constructor() {
@@ -98,9 +98,9 @@ export class SceneLoad extends BaseScene {
         //
         //load effects
         //
-        StarBurst.preload(this,this.common+"images/effects/stars.png");
-        ColorBurst.preload(this,this.common+"images/effects/colorStars.png");
-        Flare.preload(this,this.common+"images/effects/flare.png");
+        // StarBurst.preload(this,this.common+"images/effects/stars.png");
+        // ColorBurst.preload(this,this.common+"images/effects/colorStars.png");
+        // Flare.preload(this,this.common+"images/effects/flare.png");
 
         //used for point box
         this.load.image("holder",this.common+"images/ui/backs/holder.jpg");
