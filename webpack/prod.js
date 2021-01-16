@@ -1,5 +1,5 @@
+/* eslint-disable no-undef */
 const merge = require("webpack-merge");
-const path = require("path");
 const base = require("./base");
 const TerserPlugin = require("terser-webpack-plugin");
 

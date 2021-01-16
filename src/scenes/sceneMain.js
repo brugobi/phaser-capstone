@@ -1,26 +1,22 @@
+/* eslint-disable no-undef */
+/*eslint no-unused-vars: "error"*/
 import { BaseScene } from "./baseScene";
-import { Align } from "../common/util/align";
-import { FormUtil } from "../common/util/formUtil";
-//
+//import { Align } from "../common/util/align";
 import { Clock } from '../common/comps/clock';
-import { ScoreBox } from '../common/comps/scoreBox';
 import { Player } from '../common/comps/player';
-import { PlayerLaser } from '../common/comps/player';
+//import { PlayerLaser } from '../common/comps/player';
 import { GunShip } from '../common/comps/enemies';
 import { CarrierShip } from '../common/comps/enemies';
 import { ChaserShip } from '../common/comps/enemies';
-import { EnemyLaser } from '../common/comps/enemies';
+//import { EnemyLaser } from '../common/comps/enemies';
 import dude from '../../assets/images/dude.png';
-//
+
 export class SceneMain extends BaseScene {
     constructor() {
         super('SceneMain');
     }
     preload() {
-        //this.load.image('background_main', background_main);
         this.load.spritesheet('dude', dude, { frameWidth: 30, frameHeight: 48 });
-
-        // testing
         this.load.image("sprBg0", "../../assets/images/sprBg0.png");
         this.load.image("sprBg1", "../../assets/images/sprBg1.png");
         this.load.spritesheet("sprExplosion", "../../assets/images/sprExplosion.png", {
@@ -45,14 +41,11 @@ export class SceneMain extends BaseScene {
         this.load.audio("sndExplode0", "../../assets/images/sndExplode0.wav");
         this.load.audio("sndExplode1", "../../assets/images/sndExplode1.wav");
         this.load.audio("sndLaser", "../../assets/images/sndLaser.wav");
-        // end testing
     }
 
     create() {
         super.create();
         this.makeAlignGrid(11, 11);
-
-        //testing here
 
         this.anims.create({
             key: "sprEnemy0",
@@ -97,9 +90,6 @@ export class SceneMain extends BaseScene {
             laser: this.sound.add("sndLaser")
         };
 
-        //end testing
-
-        // mine
         this.setBackground('background_main');
         this.makeUi();
 
@@ -197,11 +187,6 @@ export class SceneMain extends BaseScene {
                 laser.destroy();
             }
         });
-        
-
-        
-        //this.placeImage('cowboy4', 60, .25);
-        // mine up to here  
     }
 
     makeUi() {
@@ -223,7 +208,6 @@ export class SceneMain extends BaseScene {
         this.scene.start("SceneOver");
     }
 
-    // mine down here
     update() {
         this.player.update();
 
@@ -253,8 +237,8 @@ export class SceneMain extends BaseScene {
         }
 
         // to make the enemies chasing you
-        for (var i = 0; i < this.enemies.getChildren().length; i++) {
-            var enemy = this.enemies.getChildren()[i];
+        for (let i = 0; i < this.enemies.getChildren().length; i++) {
+            let enemy = this.enemies.getChildren()[i];
 
             enemy.update();
 
@@ -276,8 +260,8 @@ export class SceneMain extends BaseScene {
         }
         
         // Frustum culling for enimies
-        for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
-            var laser = this.enemyLasers.getChildren()[i];
+        for (let i = 0; i < this.enemyLasers.getChildren().length; i++) {
+            let laser = this.enemyLasers.getChildren()[i];
             laser.update();
 
             if (laser.x < -laser.displayWidth ||
@@ -290,8 +274,8 @@ export class SceneMain extends BaseScene {
             }
         }
         // Frustum culling for player
-        for (var i = 0; i < this.playerLasers.getChildren().length; i++) {
-            var laser = this.playerLasers.getChildren()[i];
+        for (let i = 0; i < this.playerLasers.getChildren().length; i++) {
+            let laser = this.playerLasers.getChildren()[i];
             laser.update();
 
             if (laser.x < -laser.displayWidth ||
@@ -308,9 +292,9 @@ export class SceneMain extends BaseScene {
 
     // code will allow us to provide an enemy type and get all the enemies in the enemies group. This code loops through the enemies group and checks if the type of the enemy in the loop is equal to the type that is given as a parameter.
     getEnemiesByType(type) {
-        var arr = [];
-        for (var i = 0; i < this.enemies.getChildren().length; i++) {
-            var enemy = this.enemies.getChildren()[i];
+        let arr = [];
+        for (let i = 0; i < this.enemies.getChildren().length; i++) {
+            let enemy = this.enemies.getChildren()[i];
             if (enemy.getData("type") == type) {
                 arr.push(enemy);
             }

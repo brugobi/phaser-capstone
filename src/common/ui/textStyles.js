@@ -168,7 +168,7 @@ export class TextStyles {
         this.styles['BUTTON_STYLE'] = {
             style: {
                 fontFamily: TextStyles.MAIN_FONT,
-                fontSize: TextStyles.SIZE_MED3,
+                fontSize: TextStyles.SIZE_MED2,
                 color: "#ffffff",
             },
             shadow: "#000000"
