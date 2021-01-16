@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Entity } from './entities';
 import Dom from '../util/dom';
 

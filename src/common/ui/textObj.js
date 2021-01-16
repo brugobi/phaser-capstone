@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
     EventDispatcher
 } from "../../common/mc/eventDispatcher";

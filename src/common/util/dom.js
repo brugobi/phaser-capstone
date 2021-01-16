@@ -5,7 +5,7 @@ import { getScore } from "./api";
 class Dom {
   constructor() {
 
-  };
+  }
 
   createInputName() {
     const fieldSet = document.createElement('fieldset');

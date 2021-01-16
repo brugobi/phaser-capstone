@@ -1,20 +1,19 @@
- import { SceneMain } from "./scenes/sceneMain";
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+import { SceneMain } from "./scenes/sceneMain";
  import { SceneLoad } from "./scenes/sceneLoad";
  import { SceneTitle } from "./scenes/sceneTitle";
  import { SceneOver } from "./scenes/sceneOver";
 import { SceneScore } from "./scenes/sceneLeaderBoard";
   
- //
- //
- //
+
  var isMobile = navigator.userAgent.indexOf("Mobile");
  if (isMobile == -1) {
      isMobile = navigator.userAgent.indexOf("Tablet");
  }
  var w = 980;
  var h = 640;
- //
- //
+ 
  if (isMobile != -1) {
      w = window.innerWidth;
      h = window.innerHeight;

@@ -106,7 +106,7 @@ export class SceneLoad extends BaseScene {
         this.load.image("holder",this.common+"images/ui/backs/holder.jpg");
     }
     onProgress(value) {
-        let per = Math.floor(value * 100);
+        //let per = Math.floor(value * 100);
         this.bar.setPercent(value);
     }
     create() {

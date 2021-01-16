@@ -1,10 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { TextStyles } from "../ui/textStyles";
 import { TextObj } from "../ui/textObj";
 import { UIBlock } from "../ui/uiblock";
 import { EventDispatcher } from "../mc/eventDispatcher";
-//
-//
-//
+
 export class Clock extends UIBlock {
     constructor(config) {
         super(config.scene);

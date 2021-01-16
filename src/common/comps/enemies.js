@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Entity } from './entities';
 
 export class ChaserShip extends Entity {

@@ -1,3 +1,4 @@
+/* eslint-disable */
 WebFontConfig = {
     google: {
         families: ["Impact", "Flamenco", "Indie Flower", 'PT Sans']

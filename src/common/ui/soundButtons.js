@@ -1,4 +1,5 @@
-import {ToggleButton} from "../ui/toggleButton";
+/* eslint-disable no-undef */
+import { ToggleButton } from "../ui/toggleButton";
 
 export class SoundButtons extends Phaser.GameObjects.Container {
     constructor(config) {

@@ -1,4 +1,5 @@
-import {UIBlock} from "../ui/uiblock";
+/* eslint-disable no-undef */
+import { UIBlock } from "../ui/uiblock";
 
 export class Grid extends UIBlock {
     constructor(config) {

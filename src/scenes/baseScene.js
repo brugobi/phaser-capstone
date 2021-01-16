@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Align } from "../common/util/align";
 import { TextObj } from "../common/ui/textObj";
 import { AlignGrid } from "../common/util/alignGrid";

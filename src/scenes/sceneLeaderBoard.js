@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { BaseScene } from "./baseScene";
 import { FlatButton } from '../common/ui/flatButton';
-import { Bar } from '../common/comps/bar';
 import { Align } from '../common/util/align';
 import { getScore } from '../common/util/api';
-import btn1 from '../../assets/images/ui/buttons/1/2.png';
+
 
 export class SceneScore extends BaseScene {
   constructor() {

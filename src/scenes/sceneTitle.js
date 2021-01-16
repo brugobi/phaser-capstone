@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { BaseScene } from "./baseScene";
 import { FlatButton } from "../common/ui/flatButton";
 import { TextStyles } from "../common/ui/textStyles";

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 export class UIBlock {
     constructor() {
         //init private variables
