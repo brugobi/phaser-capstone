@@ -1,9 +1,7 @@
+/* eslint-disable import/prefer-default-export */
 import { BaseScene } from './baseScene';
 import { Bar } from '../common/comps/bar';
 import { Align } from '../common/util/align';
-// import { StarBurst } from "../common/effects/starBurst";
-// import { ColorBurst } from "../common/effects/colorBurst";
-// import { Flare } from "../common/effects/flare";
 
 export class SceneLoad extends BaseScene {
   constructor() {
@@ -14,11 +12,7 @@ export class SceneLoad extends BaseScene {
     this.common = './assets/';
     this.imagePath = `${this.common}images/`;
     this.audioPath = `${this.common}audio/`;
-    /**
-         *
-         * make the loading bars
-         *
-         */
+    //
     this.bar2 = new Bar({
       scene: this,
       height: this.sys.game.config.height * 0.1,
@@ -32,78 +26,47 @@ export class SceneLoad extends BaseScene {
     });
     Align.center(this.bar, this);
     Align.center(this.bar2, this);
-    /*
-           set up the progress
-         */
+    //
     this.load.on('progress', this.onProgress, this);
-    /**
-         *
-         *LOAD THE ASSETS
-         *
-         */
+    //
     const iconArray = ['gear', 'musicOff', 'musicOn', 'sfxOn', 'sfxOff', 'iconLock', 'iconHome', 'iconNext', 'iconPrev'];
-    for (let i = 0; i < iconArray.length; i++) {
+    for (let i = 0; i < iconArray.length; i += 1) {
       this.loadIcon(iconArray[i]);
     }
     //
-    // game png
-    //
-    const pngArray = ['panelBack', 'title', 'face', 'background_main', 'background_over'];
-    for (let i = 0; i < pngArray.length; i++) {
+    const pngArray = ['panelBack', 'title', 'background_main', 'background_over'];
+    for (let i = 0; i < pngArray.length; i += 1) {
       this.loadPng(pngArray[i], this.imagePath);
     }
     //
-    // game jpg
-    //
-    const jpgArray = ['background_title', 'sky'];
-    for (let i = 0; i < jpgArray.length; i++) {
+    const jpgArray = ['background_title'];
+    for (let i = 0; i < jpgArray.length; i += 1) {
       this.loadJpg(jpgArray[i], this.imagePath);
     }
     //
-    // game wav
-    //
     const wavArray = [];
-    for (let i = 0; i < wavArray.length; i++) {
+    for (let i = 0; i < wavArray.length; i += 1) {
       this.loadWav(wavArray[i], this.audioPath);
     }
     //
-    // game mp3
-    //
     const mp3Array = ['TWD_title'];
-    for (let i = 0; i < mp3Array.length; i++) {
+    for (let i = 0; i < mp3Array.length; i += 1) {
       this.loadMp3(mp3Array[i], this.audioPath);
     }
     //
-    // common wav
-    //
     const cwavArray = [];
-    for (let i = 0; i < cwavArray.length; i++) {
+    for (let i = 0; i < cwavArray.length; i += 1) {
       this.loadWav(cwavArray[i]);
     }
     //
-    //
-    //
     const cmp3Array = [];
-    for (let i = 0; i < cmp3Array.length; i++) {
+    for (let i = 0; i < cmp3Array.length; i += 1) {
       this.loadMp3(cmp3Array[i]);
     }
-    //        //
-
-    //
-    // load toggles and buttons
     //
     this.loadToggle(1);
     this.loadToggle(2);
     this.loadButton('button', 1, 2);
-
-    //
-    // load effects
-    //
-    // StarBurst.preload(this,this.common+"images/effects/stars.png");
-    // ColorBurst.preload(this,this.common+"images/effects/colorStars.png");
-    // Flare.preload(this,this.common+"images/effects/flare.png");
-
-    // used for point box
     this.load.image('holder', `${this.common}images/ui/backs/holder.jpg`);
   }
 
@@ -129,32 +92,33 @@ export class SceneLoad extends BaseScene {
   }
 
   loadJpg(key, mainPath = '') {
-    if (mainPath == '') {
+    if (mainPath === '') {
       mainPath = this.imagePath;
     }
     this.load.image(key, `${mainPath + key}.jpg`);
   }
 
   loadPng(key, mainPath = '') {
-    if (mainPath == '') {
+    if (mainPath === '') {
       mainPath = this.imagePath;
     }
     this.load.image(key, `${mainPath + key}.png`);
   }
 
   loadWav(key, mainPath = '') {
-    if (mainPath == '') {
+    if (mainPath === '') {
       mainPath = this.audioPath;
     }
     this.load.audio(key, `${mainPath + key}.wav`);
   }
 
   loadMp3(key, mainPath = '') {
-    if (mainPath == '') {
+    if (mainPath === '') {
       mainPath = this.audioPath;
     }
     this.load.audio(key, `${mainPath + key}.mp3`);
   }
 
+  /* eslint-disable class-methods-use-this */
   update() {}
 }
