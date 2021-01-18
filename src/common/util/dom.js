@@ -1,6 +1,5 @@
 import 'regenerator-runtime';
-import { postScore } from "./api";
-import { getScore } from "./api";
+import { postScore, getScore } from './api';
 
 class Dom {
   constructor() {
@@ -16,10 +15,10 @@ class Dom {
   addBtnEvent(player) {
     const btnAdd = document.getElementById('btnAddName');
     btnAdd.addEventListener('click', () => {
-      let playerName = document.getElementById('inpName');
+      const playerName = document.getElementById('inpName');
       postScore(playerName.value, player.score);
       console.log(player);
-      player.scene.scene.start("SceneOver");
+      player.scene.scene.start('SceneOver');
     });
   }
 
@@ -35,7 +34,6 @@ class Dom {
     tr.append(thPlayerName, thPlayerScore);
     scoreTable.appendChild(tr);
 
-
     arrScores.forEach(obj => {
       const trS = document.createElement('tr');
       scoreTable.appendChild(trS);
@@ -45,12 +43,9 @@ class Dom {
       td_name.innerText = `${obj.user}`;
       td_score.innerText = `${obj.score}`;
       trS.append(td_name, td_score);
-    }); 
+    });
 
     return scoreTable;
-      
-    
-    
   }
 }
 
@@ -63,6 +58,6 @@ export default Dom;
 //             </tr>
 //             <tr>
 //                 <td>Jill</td>
-//                 <td>Smith</td>   
+//                 <td>Smith</td>
 //             </tr>
 //         </table > -->
