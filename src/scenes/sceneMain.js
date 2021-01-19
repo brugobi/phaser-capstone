@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-undef */
-/* eslint no-unused-vars: "error" */
+/* eslint-disable */
+
 import { BaseScene } from './baseScene';
 import { Clock } from '../common/comps/clock';
 import { Player } from '../common/comps/player';
@@ -92,6 +91,7 @@ export class SceneMain extends BaseScene {
     this.setBackground('background_main');
     this.makeUi();
 
+    /* eslint prefer-const */
     let scoreText;
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#ffffff' });
 
@@ -206,8 +206,8 @@ export class SceneMain extends BaseScene {
   update() {
     this.player.update();
 
-    // If we run the game, you may notice that the player can still move around and shoot, 
-    // even if the player ship explodes. We can fix this by adding a check around the player 
+    // If we run the game, you may notice that the player can still move around and shoot,
+    // even if the player ship explodes. We can fix this by adding a check around the player
     // update call and the movement and shooting calls in SceneMain.
     if (!this.player.getData('isDead')) {
       this.player.update();
@@ -236,7 +236,9 @@ export class SceneMain extends BaseScene {
 
       enemy.update();
 
-      // it will be a good idea to add what is called frustum culling. Frustum culling will allow us to remove everything that moves off screen, which frees up processing power and memory
+      // it will be a good idea to add what is called frustum culling.
+      // Frustum culling will allow us to remove everything that moves off screen,
+      // which frees up processing power and memory
       if (enemy.x < -enemy.displayWidth
                 || enemy.x > this.game.config.width + enemy.displayWidth
                 || enemy.y < -enemy.displayHeight * 4
@@ -252,7 +254,7 @@ export class SceneMain extends BaseScene {
     }
 
     // Frustum culling for enimies
-      for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
 
@@ -266,7 +268,7 @@ export class SceneMain extends BaseScene {
       }
     }
     // Frustum culling for player
-      for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
+    for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
       const laser = this.playerLasers.getChildren()[i];
       laser.update();
 
@@ -281,12 +283,12 @@ export class SceneMain extends BaseScene {
     }
   }
 
-  // code will allow us to provide an enemy type and get all the enemies in the enemies group. 
-  // This code loops through the enemies group and checks if the type of the enemy in the loop 
+  // code will allow us to provide an enemy type and get all the enemies in the enemies group.
+  // This code loops through the enemies group and checks if the type of the enemy in the loop
   // is equal to the type that is given as a parameter.
   getEnemiesByType(type) {
     const arr = [];
-      for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
       if (enemy.getData('type') === type) {
         arr.push(enemy);

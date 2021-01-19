@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 import { TextStyles } from '../ui/textStyles';
 import { TextObj } from '../ui/textObj';
 import { UIBlock } from '../ui/uiblock';
@@ -75,7 +75,7 @@ export class Clock extends UIBlock {
 
   tick() {
     this.secs--;
-    if (this.secs == 0) {
+    if (this.secs === 0) {
       // this.stopClock();
       if (this.callback) {
         this.callback();
@@ -94,7 +94,7 @@ export class Clock extends UIBlock {
   }
 
   setText() {
-    if (this.useOnlySeconds == true) {
+    if (this.useOnlySeconds === true) {
       this.setText2();
       return;
     }

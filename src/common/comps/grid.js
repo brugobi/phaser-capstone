@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 import { UIBlock } from '../ui/uiblock';
 
 export class Grid extends UIBlock {
@@ -40,7 +40,7 @@ export class Grid extends UIBlock {
     //
     //
     const len = this.children.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i += 1) {
       const child = this.children[i];
 
       child.x = xx * child.displayWidth * this.xSpacing;

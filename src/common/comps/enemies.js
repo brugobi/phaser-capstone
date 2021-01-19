@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 import { Entity } from './entities';
 
 export class ChaserShip extends Entity {
@@ -24,7 +24,7 @@ export class ChaserShip extends Entity {
         this.state = this.states.CHASE;
       }
 
-      if (this.state == this.states.CHASE) {
+      if (this.state === this.states.CHASE) {
         const dx = this.scene.player.x - this.x;
         const dy = this.scene.player.y - this.y;
 

@@ -1,5 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+//
 // "result": "Game with ID: cuig3ur42E7tOxtOcx0r added."
-
+//
 import 'regenerator-runtime';
 
 const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/cuig3ur42E7tOxtOcx0r/scores/';

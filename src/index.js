@@ -7,13 +7,13 @@ import { SceneOver } from './scenes/sceneOver';
 import { SceneScore } from './scenes/sceneLeaderBoard';
 
 let isMobile = navigator.userAgent.indexOf('Mobile');
-if (isMobile == -1) {
+if (isMobile === -1) {
   isMobile = navigator.userAgent.indexOf('Tablet');
 }
 let w = 980;
 let h = 640;
 
-if (isMobile != -1) {
+if (isMobile !== -1) {
   w = window.innerWidth;
   h = window.innerHeight;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'regenerator-runtime';
 import { postScore, getScore } from './api';
 
@@ -17,7 +18,6 @@ class Dom {
     btnAdd.addEventListener('click', () => {
       const playerName = document.getElementById('inpName');
       postScore(playerName.value, player.score);
-      console.log(player);
       player.scene.scene.start('SceneOver');
     });
   }

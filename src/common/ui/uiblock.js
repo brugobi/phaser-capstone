@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 export class UIBlock {
   constructor() {
     // init private variables
@@ -15,15 +14,12 @@ export class UIBlock {
     this._visible = true;
     //
     //
-    // needs to be set by developer
     this._displayWidth = 0;
     this._displayHeight = 0;
     //
     //
     // an array of the children
     this.children = [];
-    // current child count
-    // used for indexing
     this.childIndex = -1;
     //
     // used to identify this as a UIBlock to another UIBlock
@@ -166,10 +162,6 @@ export class UIBlock {
     return this._visible;
   }
 
-  //
-  //
-  //
-  //
   set alpha(val) {
     if (this._alpha != val) {
       this._alpha = val;
@@ -185,9 +177,7 @@ export class UIBlock {
   }
 
   setScrollFactor(scroll) {
-    // setScrollFactor
     if (this.children.length > 0) {
-      // send the first child to the updateChildalpha function
       this.updateChildScroll(this.children[0], scroll);
     }
   }

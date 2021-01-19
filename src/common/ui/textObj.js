@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 import {
   EventDispatcher,
 } from '../mc/eventDispatcher';

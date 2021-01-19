@@ -9,6 +9,7 @@ import {
 } from '../util/mediaManager';
 
 let instance;
+/* eslint-disable import/prefer-default-export */
 export class Controller {
   constructor() {
     this.model = Model.getInstance();

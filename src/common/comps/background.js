@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export class Background {
   constructor(config) {
     this.scene = config.scene;

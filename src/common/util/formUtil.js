@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 import {
   AlignGrid,
 } from './alignGrid';
@@ -55,7 +55,7 @@ export class FormUtil {
     //
     //
     // center horizontal in square if needed
-    if (centerX == true) {
+    if (centerX === true) {
       x -= w / 2;
     }
     //
@@ -67,7 +67,7 @@ export class FormUtil {
     //
     // center verticaly in square if needed
     //
-    if (centerY == true) {
+    if (centerY === true) {
       y -= h / 2;
     }
     console.log(`x=${x}`);

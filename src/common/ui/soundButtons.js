@@ -1,13 +1,11 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 import { ToggleButton } from './toggleButton';
 
 export class SoundButtons extends Phaser.GameObjects.Container {
   constructor(config) {
     super(config.scene);
     this.scene = config.scene;
-
-    // make a music button
-
+    //
     this.musicButton = new ToggleButton({
       scene: this.scene,
       backKey: 'toggleBack',

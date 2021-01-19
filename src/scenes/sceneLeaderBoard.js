@@ -4,11 +4,13 @@ import { FlatButton } from '../common/ui/flatButton';
 import { Align } from '../common/util/align';
 import { getScore } from '../common/util/api';
 
+/* eslint-disable import/prefer-default-export */
 export class SceneScore extends BaseScene {
   constructor() {
     super('SceneScore');
   }
 
+  /* eslint-disable class-methods-use-this */
   preload() { }
 
   create() {
@@ -67,5 +69,6 @@ export class SceneScore extends BaseScene {
     this.scene.start('SceneMain');
   }
 
+  /* eslint-disable class-methods-use-this */
   update() { }
 }

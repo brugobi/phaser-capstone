@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   Model,
 } from '../mc/model';
@@ -23,7 +24,7 @@ export class MediaManager {
 
   musicChanged() {
     if (this.background) {
-      if (this.model.musicOn == false) {
+      if (this.model.musicOn === false) {
         this.background.stop();
       } else {
         this.background.play();
@@ -32,14 +33,14 @@ export class MediaManager {
   }
 
   playSound(key) {
-    if (this.model.soundOn == true) {
+    if (this.model.soundOn === true) {
       const sound = this.scene.sound.add(key);
       sound.play();
     }
   }
 
   setBackgroundMusic(key) {
-    if (this.model.musicOn == true) {
+    if (this.model.musicOn === true) {
       this.background = this.scene.sound.add(key, {
         volume: 0.5,
         loop: true,

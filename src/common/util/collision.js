@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export class Collision {
   static checkCollide(obj1, obj2) {
     const distX = Math.abs(obj1.x - obj2.x);

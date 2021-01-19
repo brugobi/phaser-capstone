@@ -1,22 +1,19 @@
 import { BaseScene } from './baseScene';
 import { FlatButton } from '../common/ui/flatButton';
 
+/* eslint-disable import/prefer-default-export */
 export class SceneOver extends BaseScene {
   constructor() {
     super('SceneOver');
   }
 
+  /* eslint-disable class-methods-use-this */
   preload() {}
 
   create() {
     super.create();
     this.setBackground('background_over');
     this.makeAlignGrid(11, 11);
-    // this.aGrid.showNumbers();
-    // this.formUtil = new FormUtil({ scene: this, rows: 11, cols: 11 });
-    // this.formUtil.scaleToGameW("nameField", .4);
-    // this.formUtil.placeAtIndex(60, "nameField");
-    //  this.placeImage('title', 27, .8);
     this.placeText('Game Over', 27, 'TITLE_TEXT');
     //
     //  let buttonStyle = this.textStyles.getStyle(TextStyles.BUTTON_STYLE);
@@ -39,7 +36,6 @@ export class SceneOver extends BaseScene {
     this.aGrid.placeAtIndex(60, btnScore);
     //
     this.makeUi();
-    // this.placeText("Test Me!!",49,"frost");
   }
 
   makeUi() {
@@ -55,5 +51,6 @@ export class SceneOver extends BaseScene {
     this.scene.start('SceneScore');
   }
 
+  /* eslint-disable class-methods-use-this */
   update() {}
 }
