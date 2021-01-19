@@ -2,6 +2,10 @@
 
 > This is a desktop game implemented it using Phaser.
 
+## Presentation
+
+- [Presentation](https://www.loom.com/share/da340ec376f9427eb8c50b7ac5867aa4);
+
 ## Scenes
 
 ### Title Scene
