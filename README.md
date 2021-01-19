@@ -1,110 +1,120 @@
-This version of the ultimate game parts template was built upon the phaser 3 project template by Richard Davey
+# THE WALKERS
 
+> This is a desktop game implemented it using Phaser.
 
-https://github.com/photonstorm/phaser3-project-template
+## Scenes
 
-The following comments are taken from the documentation from the phaser3 project template
-## Requirements
+### Title Scene
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+![title_scene](./assets/images/title_scene.png)
 
-## Available Commands
+### Main Scene
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+![main_scene](./assets/images/main_scene.png)
 
-## Writing Code
+### Game Over Scene
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+![gameover_scene](./assets/images/gameover_scene.png)
 
+### Score Scene
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+![score_scene](./assets/images/score_scene.png)
 
+## Built With
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+- JavaScript
+- Node.js
+- Webpack
+- Babel
+- CSS
+- Phaser
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
-"# phaser-ultimate-template" 
+To get started open the directory where you will save this repo by typing on your terminal:
 
-## Setting up a scene
-
-Most of the common functions are found inside the baseScene class. You make scenes that extend this class to have access to those functions
-```javascript
-export class SceneMain extends BaseScene {
-    constructor() {
-        super('SceneMain');
-    }
-    preload() {}
-    create() {
-
-        //set up the base scene
-        super.create();
-
-      }
-      update(){ }
-
-      }
+```
+$ cd <directory>
 ```
 
-## Setting up an align grid
+- Clone the repo typing:
 
-This project works by placing game objects on a grid that scales with a dynamically sized canvas.
-
-You can do this inside any scene that extends baseScene
-```javascript
-create() {
-
-        //set up the base scene
-        super.create();
-
-        //set the grid for the scene
-        this.makeAlignGrid(11, 11);
-
-        //show numbers for layout and debugging 
-        this.aGrid.showNumbers();
-
-
-      }
 ```
-## Adding Images
+$ git clone git@github.com:brugobi/phaser-capstone.git
+```
 
-Use placeImage to add an image on the grid and scale it.
+- Install dependencies:
 
-### Usage 
-
-this.placeImage(key,grid_number,percentage_of_screen_width)
-
-### Example 
-
-this.placeImage("face",60,.25);
-
-## Adding Text
-
-You can place text on the grid by using placeText.
-
+```
+$ npm install
+```
 ### Usage
 
-this.placeText(text,grid_number,text_style);
+Start the server:
 
-### Example
+```
+$ npm run server
+```
 
-this.placeText("Game Title",27,"TITLE_TEXT");
+Open `http://localhost:8080/` in your browser.
 
-## Adding Reusable Text Styles
+## Game Design Document
 
-### Usage
+This game is inspired by the TV Show serie *The walking dead* and here you are the hero and you fight to stay alive from the attacks of zombies and bad people, for that you have the ability to shoot them, but you have to be careful because you can die if they shoot you first or touch you.
 
-this.textStyles.regSimple(key, color, fontSize, font);
+### You (the hero)
 
-### Example
+![hero](./assets/images/dude.png)
 
-this.textStyles.regSimple("SCORE", "#ffff00", TextStyles.SIZE_LARGE, "Impact");
+### chasing zombies
+
+![zombies](./assets/images/sprEnemy1.png)
+
+### skeleton zombies
+
+![skeleton](./assets/images/sprEnemy2.png)
+
+### snipers
+
+![snipers](./assets/images/sprEnemy0.png)
+
+### Controls
+
+- A key => Move left.
+- D key => MOve right.
+- W key => Move up.
+- S key => Move down.
+- Scape key => shoot.
+
+### Templates
+
+
+To create the game I used two different templates. The phaser 3 one that you can find here created by [Richard Davey](https://github.com/photonstorm/phaser3-project-template) and one created by Willian Clarkson that helped me with some functionalities. Ckeck out his [website](https://williamclarkson.net) ! Big cheers to the amazing creators.
+
+### Design Credits
+
+
+- The backgrounds images, the skeleton zombies, and the chasing zombies used is avaible for free on [Open Game Art](https://opengameart.org);
+- The hero and the sniper used were design by me using the tool [Character Generator](http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/);
+- The walking dead Original Soundtrack theme All rights reserved !
+
+
+## Author
+
+👤 **Bruna Gobi**
+
+- Github: [@brugobi](https://github.com/brugobi)
+- Twitter: [@BrunaGobi2](https://twitter.com/BrunaGobi2)
+- Linkedin: [bruna-gobi](https://www.linkedin.com/in/bruna-gobi/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+Feel free to check the [issues page](issues/).
+
+## Acknowledgments
+
+- Project requested by [Microverse Program](https://www.microverse.org/).
+

@@ -24,7 +24,7 @@ export class SceneOver extends BaseScene {
       text: 'Play Again',
       callback: this.playAgain.bind(this),
     });
-    this.aGrid.placeAtIndex(104, btnNext);
+    this.aGrid.placeAtIndex(82, btnNext);
     //
     const btnScore = new FlatButton({
       scene: this,

@@ -28,7 +28,7 @@ export class SceneTitle extends BaseScene {
             text: "START GAME",
             callback: this.startGame.bind(this)
         });
-        this.aGrid.placeAtIndex(104, btnNext);
+        this.aGrid.placeAtIndex(82, btnNext);
         
         let btnScore = new FlatButton({
             scene: this,
@@ -40,6 +40,7 @@ export class SceneTitle extends BaseScene {
         this.aGrid.placeAtIndex(60, btnScore);
 
         this.makeUi();
+        // this.aGrid.showNumbers();
     }
     makeUi() {
         super.makeSoundPanel();
