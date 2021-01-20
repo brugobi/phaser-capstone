@@ -6,7 +6,6 @@ import { Player } from '../common/comps/player';
 import { GunShip } from '../common/comps/enemies';
 import { CarrierShip } from '../common/comps/enemies';
 import { ChaserShip } from '../common/comps/enemies';
-import dude from '../../assets/images/dude.png';
 
 export class SceneMain extends BaseScene {
   constructor() {
@@ -14,31 +13,31 @@ export class SceneMain extends BaseScene {
   }
 
   preload() {
-    this.load.spritesheet('dude', dude, { frameWidth: 30, frameHeight: 48 });
-    this.load.image('sprBg0', '../../assets/images/sprBg0.png');
-    this.load.image('sprBg1', '../../assets/images/sprBg1.png');
-    this.load.spritesheet('sprExplosion', '../../assets/images/sprExplosion.png', {
+    this.load.spritesheet('dude', './assets/images/dude.png', { frameWidth: 30, frameHeight: 48 });
+    this.load.image('sprBg0', './assets/images/sprBg0.png');
+    this.load.image('sprBg1', './assets/images/sprBg1.png');
+    this.load.spritesheet('sprExplosion', './assets/images/sprExplosion.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('sprEnemy0', '../../assets/images/sprEnemy0.png', {
+    this.load.spritesheet('sprEnemy0', './assets/images/sprEnemy0.png', {
       frameWidth: 29,
       frameHeight: 48,
     });
-    this.load.spritesheet('sprEnemy1', '../../assets/images/sprEnemy1.png', {
+    this.load.spritesheet('sprEnemy1', './assets/images/sprEnemy1.png', {
       frameWidth: 32,
       frameHeight: 49,
     });
-    this.load.spritesheet('sprEnemy2', '../../assets/images/sprEnemy2.png', {
+    this.load.spritesheet('sprEnemy2', './assets/images/sprEnemy2.png', {
       frameWidth: 21,
       frameHeight: 36,
     });
-    this.load.image('sprLaserEnemy0', '../../assets/images/sprLaserEnemy0.png');
-    this.load.image('sprLaserPlayer', '../../assets/images/sprLaserPlayer.png');
+    this.load.image('sprLaserEnemy0', './assets/images/sprLaserEnemy0.png');
+    this.load.image('sprLaserPlayer', './assets/images/sprLaserPlayer.png');
 
-    this.load.audio('sndExplode0', '../../assets/images/sndExplode0.wav');
-    this.load.audio('sndExplode1', '../../assets/images/sndExplode1.wav');
-    this.load.audio('sndLaser', '../../assets/images/sndLaser.wav');
+    this.load.audio('sndExplode0', './assets/images/sndExplode0.wav');
+    this.load.audio('sndExplode1', './assets/images/sndExplode1.wav');
+    this.load.audio('sndLaser', './assets/images/sndLaser.wav');
   }
 
   create() {
