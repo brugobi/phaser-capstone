@@ -50,14 +50,3 @@ class Dom {
 }
 
 export default Dom;
-
-// < !-- < table style = "width:100%" >
-//             <tr>
-//                 <th>Player</th>
-//                 <th>Score</th>
-//             </tr>
-//             <tr>
-//                 <td>Jill</td>
-//                 <td>Smith</td>
-//             </tr>
-//         </table > -->

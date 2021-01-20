@@ -181,6 +181,12 @@ export class SceneMain extends BaseScene {
         player.explode(false);
         player.onDestroy();
         laser.destroy();
+        //
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.W);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.S);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.A);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.D);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.SPACE);
       }
     });
   }
@@ -193,7 +199,7 @@ export class SceneMain extends BaseScene {
       scene: this,
       callback: this.timeUp.bind(this),
     });
-    clock.setClock(300);
+    clock.setClock(5);
     this.placeAtIndex(10, clock);
     clock.startClock();
   }
@@ -206,9 +212,6 @@ export class SceneMain extends BaseScene {
   update() {
     this.player.update();
 
-    // If we run the game, you may notice that the player can still move around and shoot,
-    // even if the player ship explodes. We can fix this by adding a check around the player
-    // update call and the movement and shooting calls in SceneMain.
     if (!this.player.getData('isDead')) {
       this.player.update();
       if (this.keyW.isDown) {
