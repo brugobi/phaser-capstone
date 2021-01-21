@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import './scripts/fontLoader';
 import Phaser from 'phaser';
 import { SceneMain } from './scenes/sceneMain';
 import { SceneLoad } from './scenes/sceneLoad';

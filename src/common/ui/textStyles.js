@@ -25,7 +25,7 @@ export class TextStyles {
         TextStyles.SIZE_SMALL = width / 30;
         TextStyles.SIZE_SMALL2 = width / 40;
         TextStyles.SIZE_SMALL3 = width / 50;
-        TextStyles.MAIN_FONT="Impact";
+        TextStyles.MAIN_FONT="Potta Onet";
 
         this.styles = [];
         this.styles[TextStyles.DEFAULT] = {
