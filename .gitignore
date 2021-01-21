@@ -7,6 +7,6 @@ Thumbs.db
 *.sublime-workspace
 # Vendors
 node_modules/
-
+dist/bundle.js
 # Build
 /npm-debug.log
