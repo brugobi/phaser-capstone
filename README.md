@@ -1,37 +1,56 @@
 # THE WALKERS
 
-> This is a desktop game implemented it using Phaser.
-
-## Presentation
-
-- [Presentation](https://www.loom.com/share/da340ec376f9427eb8c50b7ac5867aa4);
+> This is a desktop shoot game implemented it using Phaser. For developing the game, I used JavaScript and Phaser 3 along with Express to host it on Heroku. I implemented an API provided by [Microverse Program](https://www.microverse.org/) to host the scoring database so that the highest scores will always be available for new users to try to beat! The API implementation required the use of promises and Async functions. I also used Classes and Modules to integrate everything in an industry-standard code style while implementing JavaScript, HTML, and CSS best practices.
 
 ## Scenes
 
 ### Title Scene
 
-![title_scene](./assets/images/title_scene.png)
+![title_scene](./dist/assets/images/title_scene.png)
 
 ### Main Scene
 
-![main_scene](./assets/images/main_scene.png)
+![main_scene](./dist/assets/images/main_scene.png)
 
 ### Game Over Scene
 
-![gameover_scene](./assets/images/gameover_scene.png)
+![gameover_scene](./dist/assets/images/gameover_scene.png)
 
 ### Score Scene
 
-![score_scene](./assets/images/score_scene.png)
+![score_scene](./dist/assets/images/score_scene.png)
 
 ## Built With
 
+### Developing tools
+
 - JavaScript
+- Phaser 3
 - Node.js
 - Webpack
 - Babel
+- HTML 5
 - CSS
-- Phaser
+- Github
+- API
+
+### Testing Tools
+
+- Jest
+- Babel
+
+### Styling and Lints
+
+- Eslint
+- Stylelint
+
+### Deployment
+
+- GitHub Pages
+
+## Live Demo
+
+- [Link Demo](https://brugobi.github.io/phaser-capstone/);
 
 To get started open the directory where you will save this repo by typing on your terminal:
 
@@ -55,10 +74,10 @@ $ npm install
 Start the server:
 
 ```
-$ npm run server
+$ npm start
 ```
 
-Open `http://localhost:8080/` in your browser.
+Open `http://localhost:3000/` in your browser.
 
 ## Game Design Document
 
@@ -66,19 +85,19 @@ This game is inspired by the TV Show serie *The walking dead* and here you are t
 
 ### You (the hero)
 
-![hero](./assets/images/dude.png)
+![hero](./dist/assets/images/dude.png)
 
 ### chasing zombies
 
-![zombies](./assets/images/sprEnemy1.png)
+![zombies](./dist/assets/images/sprEnemy1.png)
 
 ### skeleton zombies
 
-![skeleton](./assets/images/sprEnemy2.png)
+![skeleton](./dist/assets/images/sprEnemy2.png)
 
 ### snipers
 
-![snipers](./assets/images/sprEnemy0.png)
+![snipers](./dist/assets/images/sprEnemy0.png)
 
 ### Controls
 
@@ -86,7 +105,7 @@ This game is inspired by the TV Show serie *The walking dead* and here you are t
 - D key => MOve right.
 - W key => Move up.
 - S key => Move down.
-- Scape key => shoot.
+- Space key => shoot.
 
 ### Templates
 
@@ -98,7 +117,7 @@ To create the game I used two different templates. The phaser 3 one that you can
 
 - The backgrounds images, the skeleton zombies, and the chasing zombies used is avaible for free on [Open Game Art](https://opengameart.org);
 - The hero and the sniper used were design by me using the tool [Character Generator](http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/);
-- The walking dead Original Soundtrack theme All rights reserved !
+- The walking dead Original Soundtrack Theme All rights reserved !
 
 
 ## Author
