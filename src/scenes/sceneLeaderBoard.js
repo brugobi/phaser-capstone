@@ -46,7 +46,7 @@ export class SceneScore extends BaseScene {
         this.placeText(colum1, 71, '');
       }
     }).catch(() => {
-      this.placeText('OPS Something wrong here: try again later!', 60, 'RED');
+      this.placeText(':/ try again later!', 60, 'RED');
     });
 
     const btnNext = new FlatButton({

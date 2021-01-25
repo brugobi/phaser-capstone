@@ -17,8 +17,10 @@ class Dom {
     const btnAdd = document.getElementById('btnAddName');
     btnAdd.addEventListener('click', () => {
       const playerName = document.getElementById('inpName');
-      postScore(playerName.value, player.score);
-      player.scene.scene.start('SceneOver');
+      if (playerName.value !== '') {
+        postScore(playerName.value, player.score);
+        player.scene.scene.start('SceneOver');
+      }
     });
   }
 
