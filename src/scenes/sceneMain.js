@@ -171,6 +171,7 @@ export class SceneMain extends BaseScene {
         player.explode(false);
         player.onDestroy();
         enemy.explode(true);
+        //
       }
     });
 
@@ -198,7 +199,7 @@ export class SceneMain extends BaseScene {
       scene: this,
       callback: this.timeUp.bind(this),
     });
-    clock.setClock(5);
+    clock.setClock(300);
     this.placeAtIndex(10, clock);
     clock.startClock();
   }
