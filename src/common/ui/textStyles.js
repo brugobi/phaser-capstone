@@ -25,7 +25,7 @@ export class TextStyles {
         TextStyles.SIZE_SMALL = width / 30;
         TextStyles.SIZE_SMALL2 = width / 40;
         TextStyles.SIZE_SMALL3 = width / 50;
-        TextStyles.MAIN_FONT="Potta Onet";
+        TextStyles.MAIN_FONT="Coda";
 
         this.styles = [];
         this.styles[TextStyles.DEFAULT] = {
@@ -165,7 +165,7 @@ export class TextStyles {
         this.styles['BUTTON_STYLE'] = {
             style: {
                 fontFamily: TextStyles.MAIN_FONT,
-                fontSize: TextStyles.SIZE_MED2,
+                fontSize: TextStyles.SIZE_SMALL2,
                 color: "#ffffff",
             },
             shadow: "#000000"

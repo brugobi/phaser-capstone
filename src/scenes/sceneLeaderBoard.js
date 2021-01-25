@@ -11,7 +11,9 @@ export class SceneScore extends BaseScene {
   }
 
   /* eslint-disable class-methods-use-this */
-  preload() { }
+  preload() { 
+    this.load.spritesheet('load', './assets/images/load.png', { frameWidth: 57, frameHeight: 50 });
+  }
 
   create() {
     super.create();
@@ -20,6 +22,17 @@ export class SceneScore extends BaseScene {
     this.makeAlignGrid(11, 11);
     // this.aGrid.showNumbers();
     this.placeText('Score', 27, 'TITLE_TEXT');
+
+    const load = this.physics.add.sprite(0, 0, 'load');
+    this.anims.create({
+      key: 'load',
+      frames: this.anims.generateFrameNumbers('load', { start: 0, end: 3 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+    this.aGrid.placeAtIndex(60, load);
+    load.anims.play('load', true);
+    Align.scaleToGameW(load, 0.10, this);
 
     getScore().then((response) => {
       const sortedScore = response.sort((a, b) => b.score - a.score);
@@ -38,7 +51,7 @@ export class SceneScore extends BaseScene {
           break;
         }
       }
-
+      load.destroy();
       if (colum2 !== '') {
         this.placeText(colum1, 69, '');
         this.placeText(colum2, 74, '');
@@ -46,6 +59,7 @@ export class SceneScore extends BaseScene {
         this.placeText(colum1, 71, '');
       }
     }).catch(() => {
+      load.destroy();
       this.placeText(':/ try again later!', 60, 'RED');
     });
 

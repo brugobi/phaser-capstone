@@ -102,9 +102,6 @@ export class SceneMain extends BaseScene {
       'dude',
     );
 
-    // player.setBounce(0.2);
-    // player.setCollideWorldBounds(true);
-
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -172,12 +169,18 @@ export class SceneMain extends BaseScene {
         player.onDestroy();
         enemy.explode(true);
         //
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.W);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.S);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.A);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.D);
+        this.input.keyboard.removeCapture(Phaser.Input.Keyboard.KeyCodes.SPACE);
       }
     });
 
     // We can also add a collider between this.player and this.enemyLasers.
     this.physics.add.overlap(this.player, this.enemyLasers, (player, laser) => {
       if (!player.getData('isDead') && !laser.getData('isDead')) {
+        player.setTint(0xff0000);
         player.explode(false);
         player.onDestroy();
         laser.destroy();
@@ -233,15 +236,11 @@ export class SceneMain extends BaseScene {
       }
     }
 
-    // to make the enemies chasing you
     for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
 
       enemy.update();
 
-      // it will be a good idea to add what is called frustum culling.
-      // Frustum culling will allow us to remove everything that moves off screen,
-      // which frees up processing power and memory
       if (enemy.x < -enemy.displayWidth
                 || enemy.x > this.game.config.width + enemy.displayWidth
                 || enemy.y < -enemy.displayHeight * 4
@@ -286,9 +285,6 @@ export class SceneMain extends BaseScene {
     }
   }
 
-  // code will allow us to provide an enemy type and get all the enemies in the enemies group.
-  // This code loops through the enemies group and checks if the type of the enemy in the loop
-  // is equal to the type that is given as a parameter.
   getEnemiesByType(type) {
     const arr = [];
     for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
