@@ -29,7 +29,7 @@ describe('The scores and usernames should be written and read from the API', () 
 
     });
   });
-  test('If the name is empty, it should not a=sent any score to the DB score table', () => {
+  test('If the name is empty, it should not sent any score to the DB score table', () => {
     postScore('', 10).then(data => {
       expect(data).toBe(null);
     }).catch(() => {
