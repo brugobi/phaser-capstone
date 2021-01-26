@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Player } from '../common/comps/player';
 import { Entity } from '../common/comps/entities';
 import { EventDispatcher } from '../common/mc/eventDispatcher';

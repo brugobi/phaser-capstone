@@ -80,7 +80,7 @@ $ npm install
 Start the server:
 
 ```
-$ npm start
+$ npm run start
 ```
 
 Open `http://localhost:3000/` in your browser.
