@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Coda+Caption:wght@800&family=Staatliches&display=swap');
+
 body {
   margin: 0;
+}
+
+#alert {
+  font-weight: bold;
+  color: red;
+}
+
+#legend {
+  color: white;
 }

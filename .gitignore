@@ -8,5 +8,6 @@ Thumbs.db
 # Vendors
 node_modules/
 dist/bundle.js
+src/__tests__/entitiesPlayer.test.js
 # Build
 /npm-debug.log

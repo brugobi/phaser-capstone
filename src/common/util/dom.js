@@ -9,19 +9,29 @@ class Dom {
 
   createInputName() {
     const fieldSet = document.createElement('fieldset');
-    fieldSet.innerHTML = "<legend>Player's name</legend> <input id='inpName' type='text' placeholder='What is your name'/> <button type='button' id='btnAddName'>Add</button>";
+    fieldSet.innerHTML = "<p id='alert'></p><legend id='legend'>Player's name</legend> <input id='inpName' type='text' placeholder='What is your name?'/> <button type='button' id='btnAddName'>Add</button>";
     return fieldSet;
   }
 
   addBtnEvent(player) {
     const btnAdd = document.getElementById('btnAddName');
+    const playerName = document.getElementById('inpName');
+    const alert = document.getElementById('alert');
     btnAdd.addEventListener('click', () => {
-      const playerName = document.getElementById('inpName');
       if (playerName.value !== '') {
         postScore(playerName.value, player.score);
         player.scene.scene.start('SceneOver');
+      } else {
+        alert.innerText = 'Please type your name!';
       }
     });
+    playerName.addEventListener('input', (event) => {
+      console.log(event.target.value);
+      if (event.target.value !== '') {
+        alert.innerText = '';
+      }
+    });
+
   }
 
   displayScore() {

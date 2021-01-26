@@ -30,7 +30,7 @@ export class SceneMain extends BaseScene {
     });
     this.load.spritesheet('sprEnemy2', './assets/images/sprEnemy2.png', {
       frameWidth: 21,
-      frameHeight: 36,
+      frameHeight: 46,
     });
     this.load.image('sprLaserEnemy0', './assets/images/sprLaserEnemy0.png');
     this.load.image('sprLaserPlayer', './assets/images/sprLaserPlayer.png');
@@ -88,6 +88,12 @@ export class SceneMain extends BaseScene {
     };
 
     this.setBackground('background_main');
+
+    this.clock = new Clock({
+      scene: this,
+      callback: this.timeUp.bind(this),
+    });
+
     this.makeUi();
 
     /* eslint prefer-const */
@@ -101,6 +107,8 @@ export class SceneMain extends BaseScene {
       this.game.config.height * 0.5,
       'dude',
     );
+
+    
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -197,19 +205,17 @@ export class SceneMain extends BaseScene {
   makeUi() {
     super.makeSoundPanel();
     super.makeGear();
-
-    const clock = new Clock({
-      scene: this,
-      callback: this.timeUp.bind(this),
-    });
-    clock.setClock(300);
-    this.placeAtIndex(10, clock);
-    clock.startClock();
+    this.clock.setClock(300);
+    this.placeAtIndex(10, this.clock);
+    this.clock.startClock();
   }
 
   timeUp() {
     this.timer1.remove();
-    this.scene.start('SceneOver');
+    this.player.explode(false);
+    this.player.onDestroy();
+    this.clock.stopClock();
+    //this.scene.start('SceneOver');
   }
 
   update() {

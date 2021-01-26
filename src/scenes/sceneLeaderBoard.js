@@ -11,7 +11,7 @@ export class SceneScore extends BaseScene {
   }
 
   /* eslint-disable class-methods-use-this */
-  preload() { 
+  preload() {
     this.load.spritesheet('load', './assets/images/load.png', { frameWidth: 57, frameHeight: 50 });
   }
 
