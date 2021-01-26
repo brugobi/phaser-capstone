@@ -5,10 +5,9 @@ Thumbs.db
 *.suo
 *.sublime-project
 *.sublime-workspace
-
 # Vendors
 node_modules/
-
+dist/bundle.js
+src/__tests__/entitiesPlayer.test.js
 # Build
-dist/
 /npm-debug.log

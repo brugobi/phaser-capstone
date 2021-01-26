@@ -1,49 +1,160 @@
-# Phaser 3 Webpack Project Template
+# THE WALKERS
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+> This is a desktop shoot game implemented it using Phaser. For developing the game, I used JavaScript and Phaser 3 along with Express to host it on Heroku. I implemented an API provided by [Microverse Program](https://www.microverse.org/) to host the scoring database so that the highest scores will always be available for new users to try to beat! The API implementation required the use of promises and Async functions. I also used Classes and Modules to integrate everything in an industry-standard code style while implementing JavaScript, HTML, and CSS best practices.
 
-This has been updated for Phaser 3.50.0 version and above.
+## Scenes
 
-Loading images via JavaScript module `import` is also supported, although not recommended.
+### Title Scene
 
-## Requirements
+![title_scene](./dist/assets/images/title_scene.png)
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+### Main Scene
 
-## Available Commands
+![main_scene](./dist/assets/images/main_scene.png)
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+### Game Over Scene
 
-## Writing Code
+![gameover_scene](./dist/assets/images/gameover_scene.png)
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
+### Score Scene
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
+![score_scene](./dist/assets/images/score_scene.png)
 
-## Customizing the Template
+## Built With
 
-### Babel
+### Developing tools
 
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+- JavaScript
+- Phaser 3
+- Node.js
+- Webpack
+- Babel
+- HTML 5
+- CSS
+- Github
+- API
 
- ```
-"browsers": [
-  ">0.25%",
-  "not ie 11",
-  "not op_mini all"
-]
- ```
+### Testing Tools
 
-### Webpack
+- Jest
+- Babel
 
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
+### Styling and Lints
 
-## Deploying Code
+- Eslint
+- Stylelint
 
-After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
+### Deployment
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
+- GitHub Pages
+
+## Live Demo
+
+- [Link Demo](https://brugobi.github.io/phaser-capstone/);
+
+### Prerequisites
+
+- Node. If you do not have Node installed in your local machine, please refer to the [Official Documentation](https://nodejs.org/en/download/);
+- Any Brownser;
+
+
+To get started open the directory where you will save this repo by typing on your terminal:
+
+```
+$ cd <directory>
+```
+
+- Clone the repo typing:
+
+```
+$ git clone git@github.com:brugobi/phaser-capstone.git
+```
+
+- Install dependencies:
+
+```
+$ npm install
+```
+### Usage
+
+Start the server:
+
+```
+$ npm run start
+```
+
+Open `http://localhost:3000/` in your browser.
+
+## Game Design Document
+
+This game is inspired by the TV Show serie *The walking dead* and here you are the hero and you fight to stay alive from the attacks of zombies and bad people, for that you have the ability to shoot them, but you have to be careful because you can die if they shoot you first or touch you. You also have just 5 minutes to beat the highest scores.
+
+### You (the hero)
+
+![hero](./dist/assets/images/dude.png)
+
+### chasing zombies
+
+![zombies](./dist/assets/images/sprEnemy1.png)
+
+### skeleton zombies
+
+![skeleton](./dist/assets/images/sprEnemy2.png)
+
+### snipers
+
+![snipers](./dist/assets/images/sprEnemy0.png)
+
+### Controls
+
+- A key => Move left.
+- D key => MOve right.
+- W key => Move up.
+- S key => Move down.
+- Space key => shoot.
+
+### Templates
+
+
+To create the game I used two different templates. The phaser 3 one that you can find here created by [Richard Davey](https://github.com/photonstorm/phaser3-project-template) and one created by Willian Clarkson that helped me with some functionalities. Ckeck out his [website](https://williamclarkson.net) and support if possible! Big cheers to the amazing creators.
+
+### Design Credits
+
+
+- The backgrounds images, the skeleton zombies, and the chasing zombies used is avaible for free on [Open Game Art](https://opengameart.org);
+- The hero and the sniper used were design by me using the tool [Character Generator](http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/);
+- The walking dead Original Soundtrack Theme All rights reserved ! The use of its property is solely for educational purposes.
+
+## Testing
+
+- If you would like to run the tests yourself, please on the root directory run:
+
+```
+npm run test
+```
+
+
+## Author
+
+👤 **Bruna Gobi**
+
+- Github: [@brugobi](https://github.com/brugobi)
+- Twitter: [@BrunaGobi2](https://twitter.com/BrunaGobi2)
+- Linkedin: [bruna-gobi](https://www.linkedin.com/in/bruna-gobi/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+Feel free to check the [issues page](issues/).
+
+## Acknowledgments
+
+- Project requested by [Microverse Program](https://www.microverse.org/).
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.

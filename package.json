@@ -1,38 +1,59 @@
 {
-  "name": "phaser3-project-template",
-  "version": "1.1.2",
-  "description": "A Phaser 3 Project Template",
+  "name": "the-walkers",
+  "version": "1.0.0",
+  "description": "A Phaser 3 Game Template for rapid game development",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --config webpack/base.js --open"
+    "test": "jest",
+    "test-verbose": "jest --verbose",
+    "build": "webpack --mode=production",
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/photonstorm/phaser3-project-template.git"
+    "url": "git+https://github.com/brugobi/phaser-capstone.git"
   },
-  "author": "Richard Davey <rdavey@gmail.com> (http://www.photonstorm.com)",
+  "author": "Bruna Gobi",
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
-    "url": "https://github.com/photonstorm/phaser3-project-template/issues"
+    "url": "https://github.com/brugobi/phaser-capstone/issues"
   },
-  "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
+  "homepage": "https://github.com/brugobi/phaser-capstone#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "file-loader": "^4.2.0",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^4.3.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.22.0",
+    "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
-    "raw-loader": "^3.1.0",
-    "terser-webpack-plugin": "^2.2.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
+    "raw-loader": "^1.0.0",
+    "resolve-url-loader": "^3.1.1",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.9.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.18.0",
+    "terser-webpack-plugin": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.1",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "phaser": "^3.50.0"
+    "clean-webpack-plugin": "^3.0.0",
+    "phaser": "^3.50.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
   }
 }
