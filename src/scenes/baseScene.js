@@ -115,5 +115,6 @@ export class BaseScene extends Phaser.Scene {
     return textStyle;
   }
 
-  update() {}
+  update() { }
+  
 }
