@@ -1,5 +1,5 @@
 {
-  "name": "phaser-ultimate-template",
+  "name": "the-walkers",
   "version": "1.0.0",
   "description": "A Phaser 3 Game Template for rapid game development",
   "main": "src/index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/williamclarkson/phaser-ultimate-template.git"
+    "url": "git+https://github.com/brugobi/phaser-capstone.git"
   },
-  "author": "William Clarkson <wcc1969@gmail.com> (http://www.phasergames.com)",
+  "author": "Bruna Gobi",
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
-    "url": "https://github.com/williamclarkson/phaser-ultimate-template/issues"
+    "url": "https://github.com/brugobi/phaser-capstone/issues"
   },
-  "homepage": "https://github.com/williamclarkson/phaser-ultimate-template#readme",
+  "homepage": "https://github.com/brugobi/phaser-capstone#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",

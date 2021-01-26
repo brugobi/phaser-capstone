@@ -52,6 +52,12 @@
 
 - [Link Demo](https://brugobi.github.io/phaser-capstone/);
 
+### Prerequisites
+
+- Node. If you do not have Node installed in your local machine, please refer to the [Official Documentation](https://nodejs.org/en/download/);
+- Any Brownser;
+
+
 To get started open the directory where you will save this repo by typing on your terminal:
 
 ```
@@ -81,7 +87,7 @@ Open `http://localhost:3000/` in your browser.
 
 ## Game Design Document
 
-This game is inspired by the TV Show serie *The walking dead* and here you are the hero and you fight to stay alive from the attacks of zombies and bad people, for that you have the ability to shoot them, but you have to be careful because you can die if they shoot you first or touch you.
+This game is inspired by the TV Show serie *The walking dead* and here you are the hero and you fight to stay alive from the attacks of zombies and bad people, for that you have the ability to shoot them, but you have to be careful because you can die if they shoot you first or touch you. You also have just 5 minutes to beat the highest scores.
 
 ### You (the hero)
 
@@ -110,14 +116,22 @@ This game is inspired by the TV Show serie *The walking dead* and here you are t
 ### Templates
 
 
-To create the game I used two different templates. The phaser 3 one that you can find here created by [Richard Davey](https://github.com/photonstorm/phaser3-project-template) and one created by Willian Clarkson that helped me with some functionalities. Ckeck out his [website](https://williamclarkson.net) ! Big cheers to the amazing creators.
+To create the game I used two different templates. The phaser 3 one that you can find here created by [Richard Davey](https://github.com/photonstorm/phaser3-project-template) and one created by Willian Clarkson that helped me with some functionalities. Ckeck out his [website](https://williamclarkson.net) and support if possible! Big cheers to the amazing creators.
 
 ### Design Credits
 
 
 - The backgrounds images, the skeleton zombies, and the chasing zombies used is avaible for free on [Open Game Art](https://opengameart.org);
 - The hero and the sniper used were design by me using the tool [Character Generator](http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/);
-- The walking dead Original Soundtrack Theme All rights reserved !
+- The walking dead Original Soundtrack Theme All rights reserved ! The use of its property is solely for educational purposes.
+
+## Testing
+
+- If you would like to run the tests yourself, please on the root directory run:
+
+```
+npm run test
+```
 
 
 ## Author
@@ -141,3 +155,6 @@ Feel free to check the [issues page](issues/).
 
 - Project requested by [Microverse Program](https://www.microverse.org/).
 
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
