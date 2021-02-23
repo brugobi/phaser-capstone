@@ -1,6 +1,6 @@
 # THE WALKERS
 
-> This is a desktop shoot game implemented it using Phaser. For developing the game, I used JavaScript and Phaser 3 along with Express to host it on Heroku. I implemented an API provided by [Microverse Program](https://www.microverse.org/) to host the scoring database so that the highest scores will always be available for new users to try to beat! The API implementation required the use of promises and Async functions. I also used Classes and Modules to integrate everything in an industry-standard code style while implementing JavaScript, HTML, and CSS best practices.
+> This is a desktop shoot game implemented it using Phaser. For developing the game, I used JavaScript and Phaser 3 along with Express to host it on gh-pages. I implemented an API provided by [Microverse Program](https://www.microverse.org/) to host the scoring database so that the highest scores will always be available for new users to try to beat! The API implementation required the use of promises and Async functions. I also used Classes and Modules to integrate everything in an industry-standard code style while implementing JavaScript, HTML, and CSS best practices.
 
 ## Scenes
 
